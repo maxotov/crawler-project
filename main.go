@@ -40,7 +40,20 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 }
 
 func main() {
-	Crawl("https://golang.org/", 4, fetcher)
+	//Crawl("https://golang.org/", 4, fetcher)
+
+	arr := make([]*person, 0)
+	for i := 0; i < 5; i++ {
+		arr = append(arr, &person{name: fmt.Sprint("testname", i)})
+	}
+	arr2 := arr[0:7]
+	for _, v := range arr2 {
+		fmt.Println(v)
+	}
+}
+
+type person struct {
+	name string
 }
 
 // fakeFetcher is Fetcher that returns canned results.
